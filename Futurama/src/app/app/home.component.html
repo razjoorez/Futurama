@@ -1,0 +1,11 @@
+<p>home works!</p>
+
+
+<div *ngFor="let info of info$ | async">
+    <p>{{info.synopsis}}</p>
+
+    <div *ngFor="let creator of info.creators">
+        <p>{{creator.name}}</p>
+    </div>
+   
+</div>
