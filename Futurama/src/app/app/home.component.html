@@ -1,11 +1,25 @@
-<p>home works!</p>
 
 
-<div *ngFor="let info of info$ | async">
-    <p>{{info.synopsis}}</p>
+<mat-card>
+    <mat-card-title >
+        <a  routerLink="characters">Characters</a>   <a  href="">Quiz</a>
+    </mat-card-title>
+    <mat-card-content >
+      
+        <div *ngFor="let info of info$ | async">
+            <p >{{info.synopsis}}</p>
+        
+            <div *ngFor="let creator of info.creators">
+                <p>{{creator.name}}</p> <br>
+                <a href={{creator.url}} target="_blank">{{creator.url}}</a> <br>
+            </div>
+           
+        </div>
 
-    <div *ngFor="let creator of info.creators">
-        <p>{{creator.name}}</p>
-    </div>
-   
-</div>
+    </mat-card-content>
+
+    
+</mat-card>
+
+
+
