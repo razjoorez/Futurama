@@ -1,0 +1,26 @@
+<p>character-list works!</p>
+<mat-list role="list">
+    <mat-nav-list>
+        <mat-list-item *ngFor="let character of characters |async">
+           <a matLine [routerLink]="['character', character.id]">{{ character.name.first}} {{character.name.last}} <img style="width:20px; float:right;" src={{character.images.main}} alt=""></a>
+           <!-- <button mat-icon-button (click)="showInfo(link)">
+              <mat-icon>info</mat-icon>
+           </button> -->
+        </mat-list-item>
+      </mat-nav-list>
+    <!-- <mat-list-item role="listitem">Item 1</mat-list-item>
+    <mat-list-item role="listitem">Item 2</mat-list-item>
+    <mat-list-item role="listitem">Item 3</mat-list-item>    
+    <mat-list-item role="listitem">Item 1</mat-list-item>
+    <mat-list-item role="listitem">Item 2</mat-list-item>
+    <mat-list-item role="listitem">Item 3</mat-list-item>
+    <mat-list-item role="listitem">Item 3</mat-list-item>    
+    <mat-list-item role="listitem">Item 1</mat-list-item>
+    <mat-list-item role="listitem">Item 2</mat-list-item>
+    <mat-list-item role="listitem">Item 3</mat-list-item> -->
+  </mat-list>
+
+ 
+  
+
+  

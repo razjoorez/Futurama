@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Character } from '../models/character';
+import { Characters } from '../models/characters';
+import { FuturamaService } from '../services/futurama.service';
+import { CharactersComponent } from './characters.component';
 
 @Component({
   selector: 'app-character',
@@ -6,10 +11,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-
-  constructor() { }
+  //characters: Characters[]= [];
+  characters:any;
+  chr: any = []
+  constructor(private route: ActivatedRoute, 
+              private futuramaService: FuturamaService) { 
+              
+              }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params=> {
+      const id = params['id'];
+      // this.futuramaService.characters.subscribe(
+      //   character => {
+      //     this.chr = this.futuramaService.characterByID(id);
+      //   }
+      // )
+    this.characters = this.futuramaService.characterByID(id);
+    })
   }
 
 }
