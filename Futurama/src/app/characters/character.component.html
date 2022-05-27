@@ -1,2 +1,15 @@
-<p>character works!</p>
-{{characters}}
+
+<mat-card>
+<mat-card-title>
+    {{chr.name.first}} {{chr.name.last}}
+</mat-card-title>
+<mat-card-content>
+    <img src={{chr.images.main}} alt="">
+</mat-card-content>
+Gender: {{chr.gender}} <br>
+Spiecies: {{chr.species}} <br>
+Occupation: {{chr.occupation}}
+Saying: {{chr.sayings[0]}},{{chr.sayings[1]}},{{chr.sayings[2]}}
+
+
+</mat-card>

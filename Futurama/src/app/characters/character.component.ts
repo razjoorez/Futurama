@@ -11,8 +11,10 @@ import { CharactersComponent } from './characters.component';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  //characters: Characters[]= [];
-  characters:any;
+  characters: Characters[]= [];
+  
+  charId: any;
+  //characters:any;
   chr: any = []
   constructor(private route: ActivatedRoute, 
               private futuramaService: FuturamaService) { 
@@ -22,12 +24,14 @@ export class CharacterComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params=> {
       const id = params['id'];
-      // this.futuramaService.characters.subscribe(
-      //   character => {
-      //     this.chr = this.futuramaService.characterByID(id);
-      //   }
-      // )
-    this.characters = this.futuramaService.characterByID(id);
+      console.log('param id:',id);
+     this.charId = id;
+      this.futuramaService.characters.subscribe(
+        character => {
+          this.chr = this.futuramaService.characterByID(id);
+        }
+      )
+  //  this.characters = this.futuramaService.characterByID(id);
     })
   }
 

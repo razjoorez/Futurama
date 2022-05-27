@@ -11,7 +11,6 @@ import { FuturamaService } from '../services/futurama.service';
 export class CharacterListComponent implements OnInit {
 
    characters: Observable<Characters[]> = new Observable<Characters[]>();
-
   constructor(private futuramaService: FuturamaService) { }
 
   ngOnInit(): void {

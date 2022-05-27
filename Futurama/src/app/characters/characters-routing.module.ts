@@ -6,8 +6,8 @@ import { CharactersComponent } from './characters.component';
 
 const routes: Routes = [{ path: '', component: CharactersComponent ,
 children: [
-  {path: ':id', component: CharacterListComponent},
-  {path:'', component: CharacterListComponent} 
+  {path: 'character/:id', component: CharacterComponent}
+  // {path:'', component: CharacterListComponent} 
  
 ]
 
