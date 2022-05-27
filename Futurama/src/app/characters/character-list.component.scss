@@ -3,11 +3,18 @@ mat-list {
     border: solid 4px wheat;
     border-radius: 8px;
     height: 200px;
-    width: 180px;
-    overflow-y: scroll;
-    
+    width: 600px;
+    margin: auto;
+    overflow-y: auto;
     
 }
 mat-list-item {
-    border-bottom: solid wheat 2px;;
+    border-bottom: solid wheat 8px;
+}
+
+@media screen and (max-width: 768px) {
+mat-list {
+    width: 400px;
+}
+
 }

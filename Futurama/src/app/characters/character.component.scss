@@ -1,9 +1,22 @@
 mat-card {
-    margin-top: 30px;
+    margin-top: 40px;
     background-color: antiquewhite;
-    border: solid 8px wheat;
+    border: solid 4px wheat;
+    width: 600px;
+    margin: auto;
+    border-radius: 8px;
+    top: 20px;
 }
 
 img {
     width: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    mat-card {
+        width: 400px;
+    }
+    img {
+        width: 30px;
+    }
 }
