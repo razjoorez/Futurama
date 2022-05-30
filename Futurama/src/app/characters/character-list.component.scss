@@ -2,19 +2,19 @@ mat-list {
     background-color: antiquewhite;
     border: solid 4px wheat;
     border-radius: 8px;
-    height: 200px;
+    height: 225px;
     width: 600px;
     margin: auto;
     overflow-y: auto;
-    
+    @media screen and (max-width: 768px) {
+            margin: auto;
+            width: 440px;
+        
 }
 mat-list-item {
     border-bottom: solid wheat 8px;
 }
 
-@media screen and (max-width: 768px) {
-mat-list {
-    width: 400px;
-}
+
 
 }
