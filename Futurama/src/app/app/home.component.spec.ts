@@ -11,6 +11,7 @@ describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   let futuramaServiceStub = jasmine.createSpyObj({getInfo: null});
+  let a;
  // let futuramaServiceStub = jasmine.createSpyObj(['getInfo']);
 
   beforeEach(() => {
@@ -29,7 +30,7 @@ describe('HomeComponent', () => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     futuramaServiceStub= TestBed.inject(FuturamaService);
-    //fixture.detectChanges();
+    a  = fixture.nativeElement.getElementsByTagName('a');
   });
 
   it('should create', () => {
@@ -44,8 +45,23 @@ describe('HomeComponent', () => {
    
   })
 
-  it('should render characters in an anchor tag', ()=> {
-    expect(fixture.nativeElement.querySelector('a').textContent).toContain('Characters');
-  });
+  it('there shpuld be two anchor tags', ()=> {
+    a  = fixture.nativeElement.getElementsByTagName('a');
+    expect(a.length).toBe(2)
+    expect(a[1].textContent).toBe('Quiz');
+  })
+
+  it('should render Character in first anchor tag', ()=> {
+    a  = fixture.nativeElement.getElementsByTagName('a');
+    expect(a[0].textContent).toContain('Characters');
+  })
+
+  it('should render Quiz in second anchor tag', ()=> {
+    a  = fixture.nativeElement.getElementsByTagName('a');
+   // expect(a.length).toBe(2)
+    expect(a[1].textContent).toContain('Quiz');
+  })
+
+ 
 
 });
