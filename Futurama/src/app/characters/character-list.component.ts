@@ -17,9 +17,9 @@ export class CharacterListComponent implements OnInit {
    this.characters = this.futuramaService.characters;
    this.futuramaService.loadCharacters();
 
-   this.characters.subscribe(data => {
-     console.log(data);
-   })
+  //  this.characters.subscribe(data => {
+  //    console.log(data);
+  //  })
   }
 
 }
